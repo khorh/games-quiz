@@ -9,6 +9,7 @@ public class Quiz {
         this.numberOfQuestions = numberOfQuestions;
         System.out.println("Welcome to this " + getQuizName() + " Quiz!");
         System.out.println("There are " + getNumberOfQuestions() + " questions in this quiz.");
+        System.out.println("You will be provided with three options.  Please answer using A, B or C.");
     }
 
     public String getQuizName() {
