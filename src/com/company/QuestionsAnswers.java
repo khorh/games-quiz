@@ -1,7 +1,7 @@
 package com.company;
 
 public class QuestionsAnswers {
-    // Properties of questions and answers
+    // Properties containing the list of questions and answers
     private String[] questions = {
             "Who won the ladies US Open Final in 2021? \nA. Emma Radacanu, B. Naomi Osaka, C. Leylah Fernandez",
             "How many Olympic gold medals has Andy Murray won? \nA. 1 medal, B. 2 medals, C. 3 medals",
@@ -25,9 +25,5 @@ public class QuestionsAnswers {
 
     public String[] getAnswers() {
         return answers;
-    }
-
-    public boolean isCorrectAnswer(int questionIndex, String answer) {
-        return true;
     }
 }
