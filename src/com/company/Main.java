@@ -5,30 +5,17 @@ import java.util.Scanner;
 
 public class Main {
 
+    static Scanner myScanner;
+
     public static void main(String[] args) {
-        introToQuiz();
-    }
-
-    public static void introToQuiz() {
+        myScanner = new Scanner(System.in);
         Quiz tennis = new Quiz("Tennis", 5, new QuestionsAnswers());
-        System.out.println(tennis);
 
-        Scanner myScanner = new Scanner(System.in);
-
-        System.out.println("First of all, what is your first name?");
-
-        String playerName = myScanner.nextLine();
-        Player player = new Player(playerName);
-
-        System.out.println("Let's begin " + player.getPlayerName() + "...");
-
-        takeQuiz(tennis.getQuestions(), player);
     }
 
     public static void takeQuiz(QuestionsAnswers qa, Player player) {
         String [] questions = qa.getQuestions();
 
-        Scanner myScanner = new Scanner(System.in);
 
         // while loop is better than a for loop as it allows for answers to be validated
         int i = 0;
