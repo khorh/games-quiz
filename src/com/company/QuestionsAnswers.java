@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class QuestionsAnswers {
     // Properties containing the list of questions and answers
     private String[] questions = {

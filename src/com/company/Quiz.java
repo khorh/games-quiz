@@ -1,16 +1,16 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-import static com.company.Main.takeQuiz;
-
 public class Quiz {
-    // Properties of a quiz
+    // Properties
     private String quizName;
     private int numberOfQuestions;
     private Player player;
     private QuestionsAnswers questions;
 
+    // Constructor
     public Quiz(String quizName, int numberOfQuestions, QuestionsAnswers questions) {
         this.quizName = quizName;
         this.numberOfQuestions = numberOfQuestions;
@@ -35,6 +35,48 @@ public class Quiz {
         takeQuiz(this.getQuestions(), player);
     }
 
+    public static void takeQuiz(QuestionsAnswers qa, Player player) {
+        Scanner myScanner = new Scanner(System.in);
+
+        String [] questions = qa.getQuestions();
+
+        int i = 0;
+        while (i < questions.length) {
+            System.out.println(questions[i]);
+            String playerAnswer = myScanner.nextLine().toLowerCase();
+
+            if (playerAnswer.equals("a") || playerAnswer.equals("b") || playerAnswer.equals("c")) {
+                player.appendAnswer(playerAnswer);
+                i++;
+            } else {
+                System.out.println("! Error in your answer. Please type either a, b or c");
+            }
+        }
+
+        showScore(new QuestionsAnswers(), player);
+    }
+
+    public static void showScore(QuestionsAnswers qa, Player player) {
+        String [] actualAnswers = qa.getAnswers();
+        ArrayList<String> playerAnswers = player.getPlayerAnswers();
+
+        int score = 0;
+        for (int j = 0; j < actualAnswers.length; j++) {
+            if (actualAnswers[j].equals(playerAnswers.get(j))) {
+                score += 1;
+            }
+        }
+
+        System.out.println(player.getPlayerName() + ", your score is " + score + "/" + actualAnswers.length);
+
+        endQuiz();
+    }
+
+    public static void endQuiz() {
+        System.out.println("This is the end of the quiz!");
+    }
+
+    // Methods - getters for quiz class
     public String getQuizName() {
         return quizName;
     }
