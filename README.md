@@ -3,7 +3,7 @@
 ![games quiz screen](./images/games-quiz.png)
 
 ### Overview
-A Java based quiz game.
+A Java (OOP) based quiz game.
 
 ### 1. Project's objective
 To learn Java in object orientated programming (OOP).
@@ -18,6 +18,7 @@ A quiz game with an introduction, questions & answers and providing the overall 
 - IDE IntelliJ
 
 #### 3.2 Java
+- Uses objected orientated programming.
 - Classes include Quiz, Player and QuestionsAnswers.  The quiz being the parent of the two other subclasses.
 - The introduction asks for the players name and this answer is stored in the player's class.
 - The questions are stored as an object in the QuestionsAnswers class. A while loop spits out each question.
